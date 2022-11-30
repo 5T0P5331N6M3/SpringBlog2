@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8"/>
+    <title>Viewing all Ads</title>
+    <th:block th:replace="partials/partials.html :: head"></th:block>
+
+</head>
+<body>
+<nav th:replace="partials/partials.html :: navbar"></nav>
+
+<h1>Viewing all Ads</h1>
+<div th:each="ad : ${ads}">
+    <!--How to add a path variable and assign it an ID from the controller.-->
+    <h1><a th:href="@{/ads/{id} (id = ${ad.id})}" th:text="${ad.title}"></a></h1>
+</div>
+</body>
+</html>
